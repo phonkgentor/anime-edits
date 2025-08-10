@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Auto Anime Editor</title>
+</head>
+<body>
+  <h1>Auto Anime/Video Editor</h1>
+  <form action="/" method="post" enctype="multipart/form-data">
+    <input type="file" name="video" accept="video/*" required>
+    <button type="submit">Upload and Edit</button>
+  </form>
+  {% if edited_file %}
+  <p><a href="{{ url_for('download', filename=edited_file) }}">Download edited video</a></p>
+  {% endif %}
+</body>
+</html>
